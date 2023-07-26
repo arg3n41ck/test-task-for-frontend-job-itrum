@@ -30,36 +30,6 @@ function restoreTask(button) {
   taskList.appendChild(taskDiv);
 }
 
-function toggleTaskCompletion(checkbox) {
-  const taskText = checkbox.nextElementSibling;
-  if (checkbox.checked) {
-    taskText.style.textDecoration = "line-through";
-  } else {
-    taskText.style.textDecoration = "none";
-  }
-}
-
-function deleteTask(button) {
-  const taskDiv = button.parentNode;
-  taskList.removeChild(taskDiv);
-
-  const trashTaskDiv = document.createElement("div");
-  trashTaskDiv.className = "task";
-  trashTaskDiv.innerHTML = `
-    <span>${button.previousElementSibling.textContent}</span>
-    <button onclick="restoreTask(this)">Восстановить</button>
-  `;
-  trashList.appendChild(trashTaskDiv);
-}
-
-function showTrash() {
-  if (trashList.style.display === "none") {
-    trashList.style.display = "block";
-  } else {
-    trashList.style.display = "none";
-  }
-}
-
 function selectAll() {
   const tasks = document.querySelectorAll('.task input[type="checkbox"]');
 
