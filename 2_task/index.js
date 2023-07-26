@@ -73,9 +73,4 @@ function toggleTaskCompletion(checkbox) {
   } else {
     taskText.style.textDecoration = "none";
   }
-
-  const selectedTasks = document.querySelectorAll(
-    '.task input[type="checkbox"]:checked'
-  );
-  const deleteButton = document.getElementById("deleteButton");
 }
